@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0D88916-8CDF-49CD-B180-7CC0F6174077}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crunch_DataObject</RootNamespace>
+    <AssemblyName>Crunch_DataObject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Libs">
+      <HintPath>..\..\..\_Addons\Adhoc\Libs\Libs\bin\Release\Libs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataObject\ComboBoxData.cs" />
+    <Compile Include="DataObject\Common.cs" />
+    <Compile Include="DataObject\CompareData.cs" />
+    <Compile Include="DataObject\Cookie.cs" />
+    <Compile Include="DataObject\AdhocDoc.cs" />
+    <Compile Include="DataObject\Credit_Coefficient.cs" />
+    <Compile Include="DataObject\Key_User_Team.cs" />
+    <Compile Include="DataObject\Credit_Report_Daily.cs" />
+    <Compile Include="DataObject\Crunch_Production_Dashboard.cs" />
+    <Compile Include="DataObject\County.cs" />
+    <Compile Include="DataObject\DamarDocType.cs" />
+    <Compile Include="DataObject\Discard_Doc.cs" />
+    <Compile Include="DataObject\Doctype.cs" />
+    <Compile Include="DataObject\Document.cs" />
+    <Compile Include="DataObject\Document_Coefficient.cs" />
+    <Compile Include="DataObject\Document_Title.cs" />
+    <Compile Include="DataObject\Download_File.cs" />
+    <Compile Include="DataObject\EVN_Data.cs" />
+    <Compile Include="DataObject\FieldItem.cs" />
+    <Compile Include="DataObject\Field_Automation.cs" />
+    <Compile Include="DataObject\Format_Automation.cs" />
+    <Compile Include="DataObject\Group.cs" />
+    <Compile Include="DataObject\IUser.cs" />
+    <Compile Include="DataObject\Key_Check_BackLog.cs" />
+    <Compile Include="DataObject\Key_Doc.cs" />
+    <Compile Include="DataObject\Key_Doc_ADC.cs" />
+    <Compile Include="DataObject\Key_Doc_CCR.cs" />
+    <Compile Include="DataObject\Key_Doc_Export.cs" />
+    <Compile Include="DataObject\Key_QC.cs" />
+    <Compile Include="DataObject\Lender.cs" />
+    <Compile Include="DataObject\Login_History.cs" />
+    <Compile Include="DataObject\ManualPlan\Center.cs" />
+    <Compile Include="DataObject\ManualPlan\CrunchPackage.cs" />
+    <Compile Include="DataObject\ManualPlan\Keyer.cs" />
+    <Compile Include="DataObject\ManualPlan\Team.cs" />
+    <Compile Include="DataObject\PairDoc\KeyDoc1900Record.cs" />
+    <Compile Include="DataObject\Permission.cs" />
+    <Compile Include="DataObject\Plan_Doc.cs" />
+    <Compile Include="DataObject\Policy.cs" />
+    <Compile Include="DataObject\Priority.cs" />
+    <Compile Include="DataObject\QC_APN.cs" />
+    <Compile Include="DataObject\Resource_Capacity.cs" />
+    <Compile Include="DataObject\Role.cs" />
+    <Compile Include="DataObject\Role_permission.cs" />
+    <Compile Include="DataObject\Schema_layout.cs" />
+    <Compile Include="DataObject\Shift.cs" />
+    <Compile Include="DataObject\State.cs" />
+    <Compile Include="DataObject\Team.cs" />
+    <Compile Include="DataObject\test.cs" />
+    <Compile Include="DataObject\TypeKey.cs" />
+    <Compile Include="DataObject\UserInfo.cs" />
+    <Compile Include="DataObject\UserProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Control.cs" />
+    <Compile Include="Util\CreateExcelFile.cs" />
+    <Compile Include="Util\Encrypt.cs" />
+    <Compile Include="Util\MySortableList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

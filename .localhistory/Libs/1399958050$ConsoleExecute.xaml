@@ -1,0 +1,90 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Libs.ConsoleExecute" local:ConsoleExecute.ConnectionString="Server=192.168.101.242;User Id=postgres;Password=@dminids@2013;Database=Clore_DB;Encoding=UNICODE;POOLING=True;CONNECTIONLIFETIME=15;MINPOOLSIZE=1;MAXPOOLSIZE=1024;"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:local="clr-namespace:Libs"
+ xmlns:local1="clr-namespace:Libs.DB"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Xml"
+ xmlns:s3="clr-namespace:System;assembly=System.Core"
+ xmlns:s4="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:st="clr-namespace:System.Text;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ConnectionString" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>632,1436</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sad:XamlDebuggerXmlReader.FileName="D:\Project\Clore\_Addons\Adhoc\Libs\Libs\ConsoleExecute.xaml" sap:VirtualizedContainerService.HintSize="592,1356">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="InputCode" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <DoWhile sap:VirtualizedContainerService.HintSize="570,1131" Condition="[InputCode &lt;&gt; &quot;Exit&quot;]">
+      <Sequence sap:VirtualizedContainerService.HintSize="544,969">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="Command" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <WriteLine sap:VirtualizedContainerService.HintSize="522,61" />
+        <WriteLine sap:VirtualizedContainerService.HintSize="522,61" Text="Command (Type: Exit to quit):" />
+        <local:ReadLine sap:VirtualizedContainerService.HintSize="522,22" Text="[Command]" />
+        <If Condition="[Command = &quot;Exit&quot;]" sap:VirtualizedContainerService.HintSize="522,581">
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="264,285">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <WriteLine sap:VirtualizedContainerService.HintSize="242,61" Text="Exit SQLCOMMNAD Console" />
+              <Assign sap:VirtualizedContainerService.HintSize="242,60">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[InputCode]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Command]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap:VirtualizedContainerService.HintSize="233,433">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <local:ConsoleClear sap:VirtualizedContainerService.HintSize="211,22" />
+              <WriteLine sap:VirtualizedContainerService.HintSize="211,61" Text="[&quot;Executing Command: &quot; &amp; Command]" />
+              <local1:OpenConnection OpenConnectionSuccess="{x:Null}" DBConnectionString="[ConnectionString]" sap:VirtualizedContainerService.HintSize="211,22" />
+              <local1:ExecuteReaderCommand sap:VirtualizedContainerService.HintSize="211,22" SqlCommandString="[Command]" />
+              <local1:CloseConnection sap:VirtualizedContainerService.HintSize="211,22" />
+            </Sequence>
+          </If.Else>
+        </If>
+      </Sequence>
+    </DoWhile>
+    <WriteLine sap:VirtualizedContainerService.HintSize="570,61" Text="Application Exited, Hava a nice day" />
+  </Sequence>
+</Activity>
